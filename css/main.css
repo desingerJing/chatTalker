@@ -526,6 +526,14 @@ footer {
 
 .plan-select-nav__content {
   overflow: auto;
+  -webkit-transition: ease .5s;
+  transition: ease .5s;
+}
+
+@media (max-width: 767px) {
+  .plan-select-nav__content {
+    text-align: center;
+  }
 }
 
 .plan-select-nav__content::-webkit-scrollbar {

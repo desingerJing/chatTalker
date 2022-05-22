@@ -107,6 +107,10 @@
 }
 .plan-select-nav__content {
     overflow: auto;
+    transition: ease .5s;
+    @include mobile-xl {
+        text-align: center;
+    }
 
     &::-webkit-scrollbar {
         width: 7px;

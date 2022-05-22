@@ -20,7 +20,8 @@ $(document).ready(function () {
     });
 
     if ($('.plan-select').length > 0) {
-        let nowPlan = 0;
+        let nowPlan = 0,
+            planScrollLeft = 0;
         function planSelect() {
             $('.plan-select-nav').find('li').removeClass('active').eq(nowPlan).addClass('active');
             $('.plan-select__content').find('.plan-select-item').hide().eq(nowPlan).fadeIn();
@@ -29,6 +30,8 @@ $(document).ready(function () {
         $('.plan-select-nav>li').click(function(){
             nowPlan = $('.plan-select-nav>li').index(this);
             $(this).each(planSelect);
+            planScrollLeft = $('.plan-select-nav>li').eq(nowPlan).position();
+            $('.plan-select-nav__content').animate({scrollLeft:planScrollLeft.left});
         });
     }
 

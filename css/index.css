@@ -322,6 +322,7 @@ header {
 @media (max-width: 767px) {
   header {
     padding: 16px 0;
+    background-color: #fff;
     border-bottom: 2px solid #f6cb52;
   }
 }

@@ -9,6 +9,7 @@ header {
 
     @include mobile-xl {
         padding: 16px 0;
+        background-color: #fff;
         border-bottom: 2px solid rgba($color: #f6cb52, $alpha: 1);
     }
 

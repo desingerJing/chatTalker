@@ -29,6 +29,9 @@
 .banner {
     height: 470px;
     overflow: visible;
+    @include mobile-xl {
+        height: 567px;
+    }
 
     &::before {
         content: "";
@@ -53,10 +56,11 @@
         bottom: -89px;
         z-index: 0;
         background: url('../images/banner.svg') top left no-repeat;
-        @include mobile-l {
+        @include mobile-xl {
             height: 100%;
             width: 100%;
             background: url('../images/banner_sm.svg') bottom right no-repeat;
+            background-size: cover;
             bottom: 0;
         }
 
@@ -74,10 +78,31 @@
 }
 
 //--------------------------------------------- 彈性選擇，提供您選擇最適合的方案
-.plan-select h2 {
+.plan-select {
+    position: relative;
+    &::before {
+        content: "";
+        width: 361px;
+        height: 361px;
+        border-radius: 50%;
+        background-color: #FBE8B1;
+        position: absolute;
+        top: 50%;
+        left: -276px;
+        z-index: -1;
+        @include mobile-xl {
+            width: 200px;
+            height: 200px;
+            left: 0%;
+            transform: translateX(-50%);
+        }
+    }
 
-    @include mobile-xl {
-        margin-bottom: 24px;
+    h2 {
+    
+        @include mobile-xl {
+            margin-bottom: 24px;
+        }
     }
 }
 .plan-select-nav__content {
@@ -157,6 +182,7 @@
         width: calc(50% - 10px);
         padding: 16px 0;
         border-radius: 12px;
+        background-color: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
         @include mobile-xl {
             width: 100%;

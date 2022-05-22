@@ -1,0 +1,44 @@
+header {
+    padding: 24px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: ease .2s;
+
+    @include mobile-xl {
+        padding: 16px 0;
+        border-bottom: 2px solid rgba($color: #f6cb52, $alpha: 1);
+    }
+
+    >.wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header-logo {
+    width: 218px;
+
+    @include mobile-xl {
+        width: 150px;
+    }
+}
+
+nav {
+
+    ul {
+        @include clearul;
+    }
+}
+
+.leavetop {
+
+    header {
+        padding: 10px 0;
+        border-bottom: 2px solid rgba($color: #f6cb52, $alpha: .8);
+        background-color: rgba(255, 255, 255, .8);
+    }
+}

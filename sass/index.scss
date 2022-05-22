@@ -1,0 +1,577 @@
+
+@import "_include/variables";
+@import "_include/reset";
+@import "_include/mixin";
+@import "_include/rwd";
+@import "_include/default";
+@import "_include/header";
+@import "_include/footer";
+
+
+.index-section {
+    padding: 50px 0;
+
+    @include mobile-xl {
+        padding: 30px 0;
+    }
+
+    h2 {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.43em;
+
+        @include mobile-xl {
+            font-size: 28px;
+            line-height: 1.42em;
+        }
+
+        +p {
+            padding-top: 16px;
+        }
+    }
+}
+
+
+//--------------------------------------------- Banner
+.banner {
+    padding-top: 88px;
+    padding-bottom: 116px;
+    position: relative;
+    overflow: hidden;
+    @include mobile-xl {
+        padding-top: 104px;
+        padding-bottom: 38px;
+    }
+    &::before {
+        content: "";
+        width: 850px;
+        height: 100%;
+        background: url('../images/bg_home.svg') right bottom no-repeat;
+        background-size: cover;
+        position: absolute;
+        right: calc((100vw - 1366px - 20px) / 2);
+        top: 0;
+        z-index: 0;
+        @include mobile-xl {
+            width: calc(100% - 40px);
+            height: 0;
+            padding-bottom: 73.35%;
+            right: 20px;
+            top: auto;
+            bottom: 38px;
+            background: url('../images/bg_home_sm.svg') right bottom no-repeat;
+            background-size: contain;
+        }
+    }
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #f6cb52;
+        position: absolute;
+        left: calc(1366px + (100vw - 1366px - 20px) / 2);
+        top: 0;
+        @include mobile-xl {
+            content: none;
+        }
+    }
+
+    > .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        @include mobile-xl {
+            display: block;
+        }
+    }
+}
+
+.banner-text {
+
+    h1 {
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 1.45em;
+        @include mobile-xl {
+            font-size: 32px;
+            line-height: 1.43em;
+        }
+        span {
+            display: block;
+            font-size: 18px;
+            color: $primary-color;
+            line-height: 1.44em;
+            @include mobile-xl {
+                font-size: 16px;
+                line-height: 1.5em;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+        padding-top: 10px;
+        font-weight: normal;
+        @include mobile-xl {
+            font-size: 18px;
+            font-size: 16px;
+            line-height: 1.5em;
+            padding-top: 16px;
+        }
+    }
+}
+
+.banner-img {
+    width: 532px;
+    max-width: 50%;
+    @include mobile-xl {
+        padding-top: 32px;
+        max-width: 100%;
+    }
+}
+
+
+//--------------------------------------------- Section 1 - 三大平台，我來搞定
+.three-platform {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 360px;
+        height: 360px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-222px, -50%);
+        transition: ease .2s;
+        z-index: -1;
+        @include tablet {
+            width: 25vw;
+            height: 25vw;
+            transform: translate(-65%, -50%);
+        }
+        @include mobile-xl {
+            width: 126px;
+            height: 126px;
+            transform: translateX(-86px);
+        }
+    }
+}
+
+.three-platform-content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 48px;
+    @include mobile-ll {
+        display: block;
+        width: 240px;
+        padding-top: 32px;
+        margin: 0 auto;
+    }
+}
+
+.three-platform-item {
+    width: 245px;
+    max-width: calc(33.333% - 20px);
+    @include mobile-ll {
+        max-width: 100%;
+    }
+
+    + .three-platform-item {
+        @include mobile-ll {
+            margin-top: 24px;
+        }
+    }
+}
+
+.three-platform-img {
+    width: 90px;
+    max-width: 30%;
+    margin: 0 auto 24px;
+    @include mobile-ll {
+        width: 60px;
+        margin-bottom: 16px;
+    }
+}
+
+.three-platform-text {
+    
+    h4 {
+        font-size: 24px;
+        @include mobile-xl {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        color: #747474;
+        padding-top: 24px;
+        @include mobile-xl {
+            padding-top: 16px;
+        }
+    }
+}
+
+//--------------------------------------------- Section 2 - 任何的角色，我都能給
+.any-role {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        width: 360px;
+        height: 360px;
+        background-color: #B8E6E7;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translate(100px, 200px);
+        z-index: -1;
+        @include tablet {
+            width: 25vw;
+            height: 25vw;
+            transform: translate(35%, 50%);
+        }
+        @include mobile-xl {
+            width: 135px;
+            height: 135px;
+            transform: translateX(35%);
+        }
+    }
+
+    .wrap > p {
+        font-size: 20px;
+
+        @include mobile-xl {
+            font-size: 18px;
+        }
+    }
+}
+
+.any-role-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 48px;
+    padding-bottom: 12px;
+    @include mobile-xl {
+        padding-top: 32px;
+        margin-top: -24px;
+    }
+}
+
+.any-role-item {
+    width: calc(25% - 8px);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
+    @include mobile-xl {
+        width: calc(50% - 8px);
+        margin-top: 24px;
+    }
+    @include mobile-l {
+        width: 260px;
+        margin: 24px auto 0;
+    }
+}
+
+
+.any-role-text {
+    padding: 16px 16px 24px;
+
+    h4 {
+        color: $primary-color;
+    }
+}
+
+//--------------------------------------------- Section 3 - 快速了解客戶輪廓 建立品牌流量池
+.brand-flow {
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: "";
+        width: 360px;
+        height: 360px;
+        background-color: #B8E6E7;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(100px, -160px);
+        z-index: -1;
+        @include tablet {
+            width: 25vw;
+            height: 25vw;
+            transform: translate(35%, -55%);
+        }
+        @include mobile-xl {
+            content: none;
+        }
+    }
+}
+.brand-flow-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+        display: block;
+    }
+
+    .btn-wrap {
+        padding-top: 24px;
+        @include tablet {
+            padding-top: 28px;
+        }
+    }
+}
+
+.brand-flow-description {
+    width: 400px;
+    max-width: calc(50% - 20px);
+    @include tablet {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        padding-top: 16px;
+        @include mobile-xl {
+            font-size: 16px;
+        }
+    }
+
+}
+
+.brand-flow-card-content {
+    width: 507px;
+    max-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    margin-top: -28px;
+    @include tablet {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 32px;
+    }
+    @include mobile-l {
+        margin-top: -24px;
+    }
+}
+
+.brand-flow-card-item {
+    width: calc(50% - 23.5px);
+    padding: 32px 32px 48px;
+    margin-top: 28px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
+    @include tablet {
+        width: calc(50% - 8px);
+        padding: 32px 24px 48px;
+    }
+    @include mobile-l {
+        width: 230px;
+        margin: 24px auto 0;
+    }
+    &:nth-child(2) {
+        @include mobile-l {
+            order:3;
+        }
+    }
+    &:nth-child(3) {
+        @include mobile-l {
+            order: 2;
+        }
+    }
+    &:nth-child(4) {
+        @include mobile-l {
+            order: 4;
+        }
+    }
+}
+
+.brand-flow-img {
+    width: 86px;
+    height: 86px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border-radius: 43px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-flow-text {
+
+    h4 {
+        font-size: 18px;
+    }
+
+    p {
+        padding-top: 16px;
+    }
+}
+
+//--------------------------------------------- Section 4 - 好評如潮
+.best-comment {
+
+    >.wrap {
+        position: relative;
+        overflow: visible;
+    
+        &::before {
+            content: "";
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            background-color: #FBE8B1;
+            position: absolute;
+            top: 0;
+            left: -60px;
+            z-index: 0;
+            @include mobile-l {
+                width: 153px;
+                height: 153px;
+                left: -47px;
+            }
+        }
+    }
+}
+
+.best-comment-content {
+    padding-top: 48px;
+}
+
+.best-comment-swiper {
+    padding-bottom: 24px;
+
+    .swiper-slide {
+        padding: 56px 10px 10px;
+    }
+
+    .swiper-pagination {
+        bottom: 0;
+        line-height: 1em;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: #DDDDDD;
+        opacity: 1;
+        transition: ease .2s;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 16px;
+        background-color: #FFD153;
+        border-radius: 50px;
+    }
+}
+
+.best-comment-item {
+    padding: 48px 32px 24px;
+    border-radius: 12px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
+    overflow: visible;
+    @include mobile-xl {
+        padding: 48px 16px 16px;
+    }
+}
+
+.best-comment-img {
+    width: 80px;
+    border-radius: 40px;
+    position: absolute;
+    top: -56px;
+    left: 32px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .14);
+}
+
+.best-comment-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #DDDDDD;
+    padding-top: 24px;
+    margin-top: 24px;
+
+    h3 {
+        width: 100%;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    h4 {
+        font-weight: normal;
+    }
+
+    .comment-star {
+        display: flex;
+        justify-content: flex-end;
+        img {
+            width: 16px;
+            + img {
+                margin-left: 8px;
+            }
+        }
+    }
+}
+
+//--------------------------------------------- Section 5 - \ 美好用戶體驗，從對話開始 /
+.index-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 36.82%;
+    padding-bottom: 0;
+    background: url('../images/home_footer.svg') top center no-repeat;
+    background-size: contain;
+    position: relative;
+    @include mobile-xl {
+        padding-top: 69.6%;
+        margin-top: 30px;
+        background-image: url('../images/footer_sm.svg');
+    }
+    .index-cta-content {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include mobile-xl {
+            position: static;
+        }
+        h2 {
+
+            @include mobile-l {
+                font-size: 24px;
+            }
+        }
+    }
+    .btn-wrap {
+        padding-top: 3.66%;
+        padding-bottom: 7.32%;
+        @include mobile-xl {
+            padding-top: 24px;
+            padding-bottom: 60px;
+        }
+    }
+}

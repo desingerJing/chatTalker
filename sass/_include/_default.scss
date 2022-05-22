@@ -40,6 +40,17 @@
     }
 }
 
+.btn-outline-info {
+    color: $primary-color;
+    font-size: 18px;
+    border: 1px solid $primary-color;
+    min-width: 130px;
+    &:hover {
+        color: #fff;
+        background-color: $primary-color;
+    }
+}
+
 main {
     padding: 50px 0;
 
@@ -51,3 +62,69 @@ main {
 .text-center {
     text-align: center;
 }
+
+
+//--------------------------------------------- Banner
+.banner {
+    padding-top: 88px;
+    padding-bottom: 116px;
+    position: relative;
+    overflow: hidden;
+
+    @include mobile-xl {
+        padding-top: 104px;
+        padding-bottom: 38px;
+    }
+
+    >.wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+        @include mobile-xl {
+            display: block;
+        }
+    }
+}
+
+.banner-text {
+
+    h1 {
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 1.45em;
+
+        @include mobile-xl {
+            font-size: 32px;
+            line-height: 1.43em;
+        }
+
+        span {
+            display: block;
+            font-size: 18px;
+            color: $primary-color;
+            line-height: 1.44em;
+
+            @include mobile-xl {
+                font-size: 16px;
+                line-height: 1.5em;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+        padding-top: 10px;
+        font-weight: normal;
+
+        @include mobile-xl {
+            font-size: 18px;
+            font-size: 16px;
+            line-height: 1.5em;
+            padding-top: 16px;
+        }
+    }
+}
+
